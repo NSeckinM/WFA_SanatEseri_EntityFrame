@@ -49,6 +49,7 @@ namespace WFA_SanatEseri_EntityFrame
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.TsmiSanatcilar = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnIptal = new System.Windows.Forms.Button();
             this.grpBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboYeniSanatci)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -87,6 +88,7 @@ namespace WFA_SanatEseri_EntityFrame
             // cboSanatci
             // 
             this.cboSanatci.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboSanatci.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSanatci.FormattingEnabled = true;
             this.cboSanatci.Location = new System.Drawing.Point(16, 162);
             this.cboSanatci.Name = "cboSanatci";
@@ -114,6 +116,7 @@ namespace WFA_SanatEseri_EntityFrame
             // grpBox1
             // 
             this.grpBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpBox1.Controls.Add(this.btnIptal);
             this.grpBox1.Controls.Add(this.pboYeniSanatci);
             this.grpBox1.Controls.Add(this.btnEkle);
             this.grpBox1.Controls.Add(this.txtAd);
@@ -166,6 +169,7 @@ namespace WFA_SanatEseri_EntityFrame
             this.lvwEserler.TabIndex = 5;
             this.lvwEserler.UseCompatibleStateImageBehavior = false;
             this.lvwEserler.View = System.Windows.Forms.View.Details;
+            this.lvwEserler.DoubleClick += new System.EventHandler(this.lvwEserler_DoubleClick);
             this.lvwEserler.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvwEserler_KeyDown);
             // 
             // columnHeader1
@@ -200,6 +204,16 @@ namespace WFA_SanatEseri_EntityFrame
             this.TsmiSanatcilar.Size = new System.Drawing.Size(88, 24);
             this.TsmiSanatcilar.Text = "Sanatcılar";
             this.TsmiSanatcilar.Click += new System.EventHandler(this.TsmiSanatcilar_Click);
+            // 
+            // btnIptal
+            // 
+            this.btnIptal.Location = new System.Drawing.Point(163, 355);
+            this.btnIptal.Name = "btnIptal";
+            this.btnIptal.Size = new System.Drawing.Size(93, 51);
+            this.btnIptal.TabIndex = 6;
+            this.btnIptal.Text = "İptal";
+            this.btnIptal.UseVisualStyleBackColor = true;
+            this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
             // 
             // Form1
             // 
@@ -240,6 +254,7 @@ namespace WFA_SanatEseri_EntityFrame
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem TsmiSanatcilar;
+        private System.Windows.Forms.Button btnIptal;
     }
 }
 
