@@ -82,6 +82,7 @@ namespace WFA_SanatEseri_EntityFrame
                 ListViewItem lvi = new ListViewItem(eser.Ad);
                 lvi.SubItems.Add(eser.Sanatci.Ad);
                 lvi.SubItems.Add(eser.Yil.ToString());
+                lvi.Tag = eser;
                 lvwEserler.Items.Add(lvi);
             }
         }
@@ -98,6 +99,23 @@ namespace WFA_SanatEseri_EntityFrame
         private void TsmiSanatcilar_Click(object sender, EventArgs e)
         {
             SanatciFormuAc();
+        }
+
+        private void lvwEserler_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete && lvwEserler.SelectedItems.Count == 1)
+            {
+                DialogResult dr = MessageBox.Show("Seçili eseri silmek istediğinize emin misiniz ?","Silme onayı",MessageBoxButtons.YesNo,MessageBoxIcon.Warning,MessageBoxDefaultButton.Button1);
+
+                if (dr == DialogResult.Yes)
+                {
+                    Eser eser = (Eser)lvwEserler.SelectedItems[0].Tag;
+                    db.Eserler.Remove(eser);
+                    db.SaveChanges();
+                    EserleriListele();
+                }
+
+            }
         }
     }
 }

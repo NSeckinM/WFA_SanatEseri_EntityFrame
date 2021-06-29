@@ -158,6 +158,7 @@ namespace WFA_SanatEseri_EntityFrame
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
+            this.lvwEserler.FullRowSelect = true;
             this.lvwEserler.HideSelection = false;
             this.lvwEserler.Location = new System.Drawing.Point(360, 35);
             this.lvwEserler.Name = "lvwEserler";
@@ -165,6 +166,7 @@ namespace WFA_SanatEseri_EntityFrame
             this.lvwEserler.TabIndex = 5;
             this.lvwEserler.UseCompatibleStateImageBehavior = false;
             this.lvwEserler.View = System.Windows.Forms.View.Details;
+            this.lvwEserler.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvwEserler_KeyDown);
             // 
             // columnHeader1
             // 
