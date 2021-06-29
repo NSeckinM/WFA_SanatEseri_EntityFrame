@@ -14,6 +14,11 @@ namespace WFA_SanatEseri_EntityFrame
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+
             if (disposing && (components != null))
             {
                 components.Dispose();
