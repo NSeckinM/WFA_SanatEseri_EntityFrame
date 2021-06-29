@@ -41,14 +41,17 @@ namespace WFA_SanatEseri_EntityFrame
             this.txtAd = new System.Windows.Forms.TextBox();
             this.mtbYil = new System.Windows.Forms.MaskedTextBox();
             this.grpBox1 = new System.Windows.Forms.GroupBox();
+            this.pboYeniSanatci = new System.Windows.Forms.PictureBox();
             this.btnEkle = new System.Windows.Forms.Button();
             this.lvwEserler = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pboYeniSanatci = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.TsmiSanatcilar = new System.Windows.Forms.ToolStripMenuItem();
             this.grpBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboYeniSanatci)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -119,12 +122,24 @@ namespace WFA_SanatEseri_EntityFrame
             this.grpBox1.Controls.Add(this.label3);
             this.grpBox1.Controls.Add(this.cboSanatci);
             this.grpBox1.Controls.Add(this.label4);
-            this.grpBox1.Location = new System.Drawing.Point(11, 12);
+            this.grpBox1.Location = new System.Drawing.Point(12, 33);
             this.grpBox1.Name = "grpBox1";
             this.grpBox1.Size = new System.Drawing.Size(342, 568);
             this.grpBox1.TabIndex = 4;
             this.grpBox1.TabStop = false;
             this.grpBox1.Text = "Sanat Eseri";
+            // 
+            // pboYeniSanatci
+            // 
+            this.pboYeniSanatci.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pboYeniSanatci.Image = global::WFA_SanatEseri_EntityFrame.Properties.Resources.plus;
+            this.pboYeniSanatci.Location = new System.Drawing.Point(262, 163);
+            this.pboYeniSanatci.Name = "pboYeniSanatci";
+            this.pboYeniSanatci.Size = new System.Drawing.Size(34, 26);
+            this.pboYeniSanatci.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pboYeniSanatci.TabIndex = 5;
+            this.pboYeniSanatci.TabStop = false;
+            this.pboYeniSanatci.Click += new System.EventHandler(this.pboYeniSanatci_Click_1);
             // 
             // btnEkle
             // 
@@ -135,6 +150,7 @@ namespace WFA_SanatEseri_EntityFrame
             this.btnEkle.TabIndex = 4;
             this.btnEkle.Text = "EKLE";
             this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click_1);
             // 
             // lvwEserler
             // 
@@ -143,7 +159,7 @@ namespace WFA_SanatEseri_EntityFrame
             this.columnHeader2,
             this.columnHeader3});
             this.lvwEserler.HideSelection = false;
-            this.lvwEserler.Location = new System.Drawing.Point(362, 14);
+            this.lvwEserler.Location = new System.Drawing.Point(360, 35);
             this.lvwEserler.Name = "lvwEserler";
             this.lvwEserler.Size = new System.Drawing.Size(524, 566);
             this.lvwEserler.TabIndex = 5;
@@ -165,16 +181,23 @@ namespace WFA_SanatEseri_EntityFrame
             this.columnHeader3.Text = "Yıl";
             this.columnHeader3.Width = 156;
             // 
-            // pboYeniSanatci
+            // menuStrip1
             // 
-            this.pboYeniSanatci.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pboYeniSanatci.Image = global::WFA_SanatEseri_EntityFrame.Properties.Resources.plus;
-            this.pboYeniSanatci.Location = new System.Drawing.Point(262, 163);
-            this.pboYeniSanatci.Name = "pboYeniSanatci";
-            this.pboYeniSanatci.Size = new System.Drawing.Size(34, 26);
-            this.pboYeniSanatci.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pboYeniSanatci.TabIndex = 5;
-            this.pboYeniSanatci.TabStop = false;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TsmiSanatcilar});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(898, 28);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "Sanatcılar";
+            // 
+            // TsmiSanatcilar
+            // 
+            this.TsmiSanatcilar.Name = "TsmiSanatcilar";
+            this.TsmiSanatcilar.Size = new System.Drawing.Size(88, 24);
+            this.TsmiSanatcilar.Text = "Sanatcılar";
+            this.TsmiSanatcilar.Click += new System.EventHandler(this.TsmiSanatcilar_Click);
             // 
             // Form1
             // 
@@ -183,13 +206,18 @@ namespace WFA_SanatEseri_EntityFrame
             this.ClientSize = new System.Drawing.Size(898, 613);
             this.Controls.Add(this.lvwEserler);
             this.Controls.Add(this.grpBox1);
+            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             this.grpBox1.ResumeLayout(false);
             this.grpBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboYeniSanatci)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -208,6 +236,8 @@ namespace WFA_SanatEseri_EntityFrame
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem TsmiSanatcilar;
     }
 }
 
